@@ -42,6 +42,7 @@ Soft2Proj-backend-master/Soft2Proj-backend-master/target/
 
 # If you generate jars/wars/zips manually elsewhere
 *.jar
+!Soft2Proj-backend-master/Soft2Proj-backend-master/.mvn/wrapper/*.jar
 *.war
 *.zip
 
@@ -66,4 +67,3 @@ venv/
 # =========================
 coverage/
 reports/
-

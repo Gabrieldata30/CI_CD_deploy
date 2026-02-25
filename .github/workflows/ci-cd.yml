@@ -62,15 +62,18 @@ jobs:
       - name: Test
         run: npm test
 
-      - name: Build
-        run: npm run build
+      - name: Build (Next.js)
+        # Avoid npm lifecycle "postbuild" because Tailwind v4 CLI is not installed in this repo.
+        run: npx next build
 
       - name: Upload frontend artifact
         uses: actions/upload-artifact@v4
         with:
           name: frontend-build-${{ github.sha }}
           path: |
-            flowbuilder-frontend/.next
+            flowbuilder-frontend/.next/standalone
+            flowbuilder-frontend/.next/static
+            flowbuilder-frontend/public
             flowbuilder-frontend/package.json
             flowbuilder-frontend/next.config.ts
           if-no-files-found: warn
@@ -102,4 +105,3 @@ jobs:
           name: backend-jar-${{ github.sha }}
           path: Soft2Proj-backend-master/Soft2Proj-backend-master/target/*.jar
           if-no-files-found: error
-
