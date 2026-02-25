@@ -39,9 +39,15 @@ public class HttpRequestNode extends Node {
     }
     public void setPolitica(String politica) {
         switch (politica) {
-            case "STOP" -> this.politica = PoliticaError.STOP_ON_FAIL;
-            case "CONTINUE" -> this.politica = PoliticaError.CONTINUE_ON_FAIL;
-            default -> this.politica = PoliticaError.STOP_ON_FAIL;
+            case "STOP":
+                this.politica = PoliticaError.STOP_ON_FAIL;
+                break;
+            case "CONTINUE":
+                this.politica = PoliticaError.CONTINUE_ON_FAIL;
+                break;
+            default:
+                this.politica = PoliticaError.STOP_ON_FAIL;
+                break;
         }
     }
     public void setTimeout(int timeout) {
@@ -61,7 +67,7 @@ public class HttpRequestNode extends Node {
                 .followRedirects(HttpClient.Redirect.ALWAYS)
                 .build();
         boolean success = false;
-        String gamename = "No se encontró";
+        String gamename = "No se encontrÃ³";
 
         for (int i = 1; i <= attempts; i++) {
             try {
@@ -69,7 +75,7 @@ public class HttpRequestNode extends Node {
                         .uri(URI.create(url))
                         .timeout(Duration.ofMillis(timeout));
 
-                // Elegir metodo según JSON
+                // Elegir metodo segÃºn JSON
                 if (method == null || method.equalsIgnoreCase("GET")) {
                     builder.GET();
                 } else if (method.equalsIgnoreCase("POST")) {
