@@ -1,0 +1,69 @@
+# =========================
+# General
+# =========================
+.DS_Store
+Thumbs.db
+*.log
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+*.iml
+
+# =========================
+# Environment files
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Frontend (Next.js / Node)
+# =========================
+flowbuilder-frontend/node_modules/
+flowbuilder-frontend/.next/
+flowbuilder-frontend/out/
+flowbuilder-frontend/coverage/
+flowbuilder-frontend/.turbo/
+flowbuilder-frontend/.vercel/
+flowbuilder-frontend/npm-debug.log*
+flowbuilder-frontend/yarn-debug.log*
+flowbuilder-frontend/yarn-error.log*
+flowbuilder-frontend/pnpm-debug.log*
+flowbuilder-frontend/dist/
+flowbuilder-frontend/build/
+
+# =========================
+# Backend (Java / Maven)
+# =========================
+Soft2Proj-backend-master/Soft2Proj-backend-master/target/
+
+# If you generate jars/wars/zips manually elsewhere
+*.jar
+*.war
+*.zip
+
+# =========================
+# Java compiled files
+# =========================
+*.class
+
+# =========================
+# Python (scripts in /comandos)
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.python-version
+.venv/
+venv/
+
+# =========================
+# Test / reports
+# =========================
+coverage/
+reports/
+
